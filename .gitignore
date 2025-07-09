@@ -1,0 +1,14 @@
+# Lazy.nvim lockfile
+lazy-lock.json
+
+# System files
+.DS_Store
+*.log
+
+# Neovim temporary files
+*.swp
+*.swo
+*~
+
+# Plugin data directories (if any get created)
+plugin/
