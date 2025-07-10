@@ -1,5 +1,7 @@
 # 🚀 Neovim Configuration - Dvorak Optimized
 
+![nviml](./assets/screenshot.png)
+
 A modern, feature-rich Neovim configuration specifically optimized for Dvorak keyboard layout users. This configuration provides a powerful development environment with carefully crafted keybindings that work seamlessly with the Dvorak layout.
 
 ## ✨ Features
