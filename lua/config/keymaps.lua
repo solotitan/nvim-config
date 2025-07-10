@@ -129,6 +129,20 @@ keymap.set("n", "<leader>pp", ":Lazy profile<CR>", { desc = "Plugin profile" })
 keymap.set("n", "<leader>pi", ":Lazy install<CR>", { desc = "Install plugins" })
 
 -- ============================================================================
+-- VIM COACH - Command Reference
+-- ============================================================================
+
+-- Main vim coach interface
+keymap.set("n", "<leader>?", "<cmd>VimCoach<cr>", { desc = "Vim Coach - All Commands" })
+
+-- Category-specific vim coach commands
+keymap.set("n", "<leader>hm", "<cmd>VimCoach motions<cr>", { desc = "Vim Coach - Motion Commands" })
+keymap.set("n", "<leader>he", "<cmd>VimCoach editing<cr>", { desc = "Vim Coach - Editing Commands" })
+keymap.set("n", "<leader>hv", "<cmd>VimCoach visual<cr>", { desc = "Vim Coach - Visual Mode Commands" })
+keymap.set("n", "<leader>hp", "<cmd>VimCoach plugins<cr>", { desc = "Vim Coach - Plugin Commands" })
+keymap.set("n", "<leader>hh", "<cmd>VimCoach all<cr>", { desc = "Vim Coach - All Commands" })
+
+-- ============================================================================
 -- NOTES
 -- ============================================================================
 -- Dvorak Physical Key Mappings:
@@ -139,3 +153,11 @@ keymap.set("n", "<leader>pi", ":Lazy install<CR>", { desc = "Install plugins" })
 -- sp → or (split pane)
 -- sv → ow (split vertical)
 -- ti → hc (tab insert)
+--
+-- Vim Coach Keybindings:
+-- <leader>? → Comprehensive command search
+-- <leader>hm → Motion commands (h,j,k,l,w,b,f,etc.)
+-- <leader>he → Editing commands (i,a,d,c,y,p,etc.)
+-- <leader>hv → Visual mode commands
+-- <leader>hp → Plugin-specific commands
+-- <leader>hh → All commands (same as <leader>?)

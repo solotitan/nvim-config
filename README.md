@@ -9,6 +9,7 @@ A modern, feature-rich Neovim configuration specifically optimized for Dvorak ke
 - **Dvorak-Optimized Keybindings**: All keymaps are thoughtfully designed for Dvorak keyboard layout
 - **Modern Plugin Management**: Uses [lazy.nvim](https://github.com/folke/lazy.nvim) for fast and efficient plugin loading
 - **LSP Integration**: Full Language Server Protocol support for intelligent code completion and diagnostics
+- **Vim Command Reference**: Integrated [vim-coach.nvim](https://github.com/shahshlok/vim-coach.nvim) for learning and mastering Vim commands
 - **Beautiful Dashboard**: Custom dashboard for a welcoming startup experience
 - **Smart Editor Features**: Enhanced editing capabilities with modern Neovim features
 - **Consistent Theming**: Carefully selected colorscheme for optimal visual experience
@@ -27,7 +28,8 @@ nvim/
 │       ├── dashboard.lua    # Dashboard configuration
 │       ├── editor.lua       # Editor enhancement plugins
 │       ├── colorscheme.lua  # Theme and colorscheme settings
-│       └── lsp.lua          # Language Server Protocol setup
+│       ├── lsp.lua          # Language Server Protocol setup
+│       └── vim-coach.lua    # Vim command reference and learning tool
 ```
 
 ## 🛠️ Requirements
@@ -82,6 +84,38 @@ This configuration includes keybindings specifically designed for Dvorak keyboar
 - **Plugin Shortcuts**: All plugin keybindings are mapped to comfortable Dvorak positions
 
 > **Note**: If you're using QWERTY, you may want to review and adjust the keybindings in `lua/config/keymaps.lua`
+
+## 🎯 Vim Coach - Command Reference
+
+This configuration includes [vim-coach.nvim](https://github.com/shahshlok/vim-coach.nvim) by [Shlok Shah](https://github.com/shahshlok), a comprehensive Vim command reference tool that helps you learn and master Vim efficiently.
+
+### Features
+- 🔍 **Fuzzy searchable** - Find any command instantly with modern snacks.picker interface
+- 📚 **120+ commands** - Comprehensive coverage of Vim motions, editing, visual mode, and plugins
+- 🎓 **Beginner-focused** - Detailed explanations with "when to use" guidance
+- 🌐 **Context-aware** - Different explanations for file vs explorer vs git contexts
+- 💡 **Coaching tips** - Learn WHY and WHEN to use each command
+- 📋 **Copy keybinds** - Press Enter or Ctrl+Y to copy commands to clipboard
+
+### Keybindings
+
+| Key | Command | Description |
+|-----|---------|-------------|
+| `<leader>?` | `:VimCoach` | Open comprehensive command search |
+| `<leader>hm` | `:VimCoach motions` | Motion commands (h,j,k,l,w,b,f,etc.) |
+| `<leader>he` | `:VimCoach editing` | Editing commands (i,a,d,c,y,p,etc.) |
+| `<leader>hv` | `:VimCoach visual` | Visual mode commands |
+| `<leader>hp` | `:VimCoach plugins` | Plugin-specific commands |
+| `<leader>hh` | `:VimCoach all` | All commands (same as `<leader>?`) |
+
+### Usage
+1. Press `<leader>?` (Space + ?) to open the main interface
+2. Type to search for commands (e.g., "delete", "move", "copy")
+3. Use arrow keys or fuzzy search to navigate
+4. Press `Enter` or `Ctrl+Y` to copy a keybind to clipboard
+5. Press `Esc` to close the interface
+
+**Credit**: Special thanks to [Shlok Shah](https://github.com/shahshlok) for creating this excellent learning tool!
 
 ## 🎨 Customization
 
@@ -142,6 +176,7 @@ This configuration is open source and available under the [MIT License](LICENSE)
 
 - [LazyVim](https://github.com/LazyVim/LazyVim) for inspiration
 - [Neovim](https://neovim.io/) community for the amazing editor
+- [Shlok Shah](https://github.com/shahshlok) for the excellent [vim-coach.nvim](https://github.com/shahshlok/vim-coach.nvim) plugin
 - All plugin authors for their incredible work
 
 ---
