@@ -29,7 +29,7 @@ return {
           -- "lua_ls",      -- Lua (temporarily disabled)
           "rust_analyzer", -- Rust
           "pyright",     -- Python
-          "ts_ls",       -- TypeScript/JavaScript (LSP server name)
+          "ts_ls",       -- TypeScript/JavaScript
           "html",        -- HTML
           "cssls",       -- CSS
           "jsonls",      -- JSON
@@ -47,8 +47,6 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      local lspconfig = require("lspconfig")
-      
       -- LSP keymaps (only set when LSP is attached)
       local on_attach = function(client, bufnr)
         local opts = { buffer = bufnr, silent = true }
@@ -70,38 +68,67 @@ return {
       -- Enhanced capabilities for completion
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       
-      -- Server configurations
-      local servers = {
-        -- lua_ls = {
-        --   -- Temporarily disabled to stop home directory scanning
-        -- },
-        rust_analyzer = {
-          settings = {
-            ["rust-analyzer"] = {
-              cargo = { allFeatures = true },
-              checkOnSave = { command = "clippy" },
-            },
+      -- Configure rust-analyzer
+      vim.lsp.config("rust_analyzer", {
+        cmd = { "rust-analyzer" },
+        root_markers = { "Cargo.toml", "rust-project.json" },
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = { allFeatures = true },
+            checkOnSave = { command = "clippy" },
           },
         },
-        pyright = {},
-        ts_ls = {},
-        html = {},
-        cssls = {},
-        jsonls = {},
-      }
-
-      -- Setup servers
-      for server, config in pairs(servers) do
-        config.on_attach = on_attach
-        config.capabilities = capabilities
-        lspconfig[server].setup(config)
-      end
-      
-      -- Explicitly disable lua_ls to prevent auto-detection
-      lspconfig.lua_ls.setup({
-        autostart = false,
-        single_file_support = false,
       })
+      
+      -- Configure Python LSP
+      vim.lsp.config("pyright", {
+        cmd = { "pyright-langserver", "--stdio" },
+        root_markers = { "pyproject.toml", "setup.py", "requirements.txt" },
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+      
+      -- Configure TypeScript/JavaScript LSP
+      vim.lsp.config("ts_ls", {
+        cmd = { "typescript-language-server", "--stdio" },
+        root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+      
+      -- Configure HTML LSP
+      vim.lsp.config("html", {
+        cmd = { "vscode-html-language-server", "--stdio" },
+        root_markers = { "package.json", ".git" },
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+      
+      -- Configure CSS LSP
+      vim.lsp.config("cssls", {
+        cmd = { "vscode-css-language-server", "--stdio" },
+        root_markers = { "package.json", ".git" },
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+      
+      -- Configure JSON LSP
+      vim.lsp.config("jsonls", {
+        cmd = { "vscode-json-language-server", "--stdio" },
+        root_markers = { "package.json", ".git" },
+        on_attach = on_attach,
+        capabilities = capabilities,
+      })
+      
+      -- Enable LSP servers
+      vim.lsp.enable("rust_analyzer")
+      vim.lsp.enable("pyright")
+      vim.lsp.enable("ts_ls")
+      vim.lsp.enable("html")
+      vim.lsp.enable("cssls")
+      vim.lsp.enable("jsonls")
     end,
   },
 

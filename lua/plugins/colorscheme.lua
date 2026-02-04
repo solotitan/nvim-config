@@ -173,6 +173,18 @@ return {
     end,
   },
 
+  -- Blood Moon - Ported from blood_moon.json
+  {
+    "blood_moon",
+    dir = vim.fn.stdpath("config"),
+    name = "blood_moon",
+    lazy = true,
+    config = function()
+      -- The blood_moon.lua file is already in the lua directory
+      -- and will be automatically available via require('blood_moon')
+    end,
+  },
+
   -- Theme switching function
   {
     "folke/which-key.nvim",

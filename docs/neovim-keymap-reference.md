@@ -1,6 +1,6 @@
 # Neovim Keymap Reference Guide
 
-A comprehensive guide to Neovim keybindings, notation, and your custom Dvorak-optimized configuration.
+A comprehensive guide to Neovim keybindings, notation, and your custom QWERTY configuration.
 
 ## Table of Contents
 - [Key Notation System](#key-notation-system)
@@ -15,7 +15,7 @@ A comprehensive guide to Neovim keybindings, notation, and your custom Dvorak-op
 - [Visual Mode](#visual-mode)
 - [Registers and Clipboard](#registers-and-clipboard)
 - [Undo/Redo](#undoredo)
-- [Dvorak Physical Mappings](#dvorak-physical-mappings)
+- [QWERTY Key Mappings](#qwerty-key-mappings)
 
 ---
 
@@ -100,18 +100,18 @@ Neovim uses a specific notation for key combinations:
 ## Window Management (Your Custom 's' Prefix)
 
 ### Window Navigation
-| Key | Action | Physical Keys (Dvorak) |
-|-----|--------|------------------------|
-| `sd` | ← | `oe` |
-| `su` | ↑ | `og` |
-| `st` | ↓ | `oh` |
-| `sn` | → | `ob` |
+| Key | Action | Description |
+|-----|--------|-------------|
+| `sh` | ← | Move to left window |
+| `sk` | ↑ | Move to up window |
+| `sj` | ↓ | Move to down window |
+| `sl` | → | Move to right window |
 
 ### Window Splits
-| Key | Action | Physical Keys (Dvorak) |
-|-----|--------|------------------------|
-| `sp` | Split horizontal | `or` |
-| `sv` | Split vertical | `ow` |
+| Key | Action | Description |
+|-----|--------|-------------|
+| `sp` | Split horizontal | Create horizontal split |
+| `sv` | Split vertical | Create vertical split |
 
 ### Window Resizing
 | Key | Action |
@@ -125,12 +125,12 @@ Neovim uses a specific notation for key combinations:
 
 ## Tab Management
 
-| Key | Action | Physical Keys (Dvorak) |
-|-----|--------|------------------------|
-| `ti` | New tab | `hc` |
-| `<Tab>` | Next tab | |
-| `<S-Tab>` | Previous tab | |
-| `:bd` | Close buffer/tab | |
+| Key | Action | Description |
+|-----|--------|-------------|
+| `ti` | New tab | Create new tab |
+| `<Tab>` | Next tab | Switch to next tab |
+| `<S-Tab>` | Previous tab | Switch to previous tab |
+| `:bd` | Close buffer/tab | Close current buffer |
 
 ---
 
@@ -341,26 +341,26 @@ Neovim uses a specific notation for key combinations:
 
 ---
 
-## Dvorak Physical Mappings
+## QWERTY Key Mappings
 
-### Window Navigation (Physical Keys)
-| Logical | Physical | Action |
-|---------|----------|---------|
-| `sd` | `oe` | Move to left window |
-| `su` | `og` | Move to up window |
-| `st` | `oh` | Move to down window |
-| `sn` | `ob` | Move to right window |
+### Window Navigation
+| Key | Action | Mnemonic |
+|-----|--------|----------|
+| `sh` | Move to left window | h = left in vim |
+| `sk` | Move to up window | k = up in vim |
+| `sj` | Move to down window | j = down in vim |
+| `sl` | Move to right window | l = right in vim |
 
-### Window Splits (Physical Keys)
-| Logical | Physical | Action |
-|---------|----------|---------|
-| `sp` | `or` | Horizontal split |
-| `sv` | `ow` | Vertical split |
+### Window Splits
+| Key | Action | Mnemonic |
+|-----|--------|----------|
+| `sp` | Horizontal split | p = pane |
+| `sv` | Vertical split | v = vertical |
 
-### Tab Management (Physical Keys)
-| Logical | Physical | Action |
-|---------|----------|---------|
-| `ti` | `hc` | New tab |
+### Tab Management
+| Key | Action | Mnemonic |
+|-----|--------|----------|
+| `ti` | New tab | i = insert (new) |
 
 ---
 
@@ -395,7 +395,7 @@ Neovim uses a specific notation for key combinations:
 ```
 Movement:     h j k l  w b  0 $  gg G
 Edit:         i a o  x dd yy p
-Window:       sd su st sn  sp sv
+Window:       sh sk sj sl  sp sv
 Search:       / ? n N
 LSP:          gd K <leader>ca
 Files:        ;f ;r ;b
@@ -414,4 +414,4 @@ Undo:         u <C-r>
 
 ---
 
-*This reference covers your custom Dvorak-optimized Neovim configuration. Keep this handy while learning!*
+*This reference covers your custom QWERTY Neovim configuration. Keep this handy while learning!*

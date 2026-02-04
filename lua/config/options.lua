@@ -21,7 +21,7 @@ opt.signcolumn = "yes"             -- Always show sign column
 opt.wrap = false                   -- Disable line wrapping
 opt.scrolloff = 8                  -- Keep 8 lines above/below cursor
 opt.sidescrolloff = 8              -- Keep 8 columns left/right of cursor
-opt.colorcolumn = "80"             -- Show column at 80 characters
+-- opt.colorcolumn = "80"             -- Show column at 80 characters (disabled)
 opt.termguicolors = true           -- Enable 24-bit RGB colors
 
 -- Indentation

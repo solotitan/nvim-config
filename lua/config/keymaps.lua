@@ -1,23 +1,23 @@
 -- ============================================================================
--- Custom Keymaps - Optimized for Dvorak Layout
+-- Custom Keymaps - QWERTY Layout
 -- ============================================================================
 
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
 -- ============================================================================
--- WINDOW MANAGEMENT (s prefix - back to preferred)
+-- WINDOW MANAGEMENT (s prefix)
 -- ============================================================================
 
 -- Window splits
 keymap.set("n", "sp", ":split<CR>", { noremap = true, silent = true, desc = "Horizontal split" })
 keymap.set("n", "sv", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical split" })
 
--- Window navigation (Dvorak optimized)
-keymap.set("n", "sd", "<C-w>h", { desc = "Move to left window" })
-keymap.set("n", "su", "<C-w>k", { desc = "Move to up window" })
-keymap.set("n", "st", "<C-w>j", { desc = "Move to down window" })
-keymap.set("n", "sn", "<C-w>l", { desc = "Move to right window" })
+-- Window navigation (QWERTY - hjkl pattern)
+keymap.set("n", "sh", "<C-w>h", { desc = "Move to left window" })
+keymap.set("n", "sk", "<C-w>k", { desc = "Move to up window" })
+keymap.set("n", "sj", "<C-w>j", { desc = "Move to down window" })
+keymap.set("n", "sl", "<C-w>l", { desc = "Move to right window" })
 
 -- Window resizing
 keymap.set("n", "<C-w><left>", "<C-w><", { desc = "Decrease width" })
@@ -129,6 +129,21 @@ keymap.set("n", "<leader>pp", ":Lazy profile<CR>", { desc = "Plugin profile" })
 keymap.set("n", "<leader>pi", ":Lazy install<CR>", { desc = "Install plugins" })
 
 -- ============================================================================
+-- SNACKS PICKER - File Navigation
+-- ============================================================================
+
+-- File operations using snacks picker
+keymap.set("n", ";f", function() require("snacks").picker.files() end, { desc = "Find files" })
+keymap.set("n", ";r", function() require("snacks").picker.recent() end, { desc = "Recent files" })
+keymap.set("n", ";g", function() require("snacks").picker.grep() end, { desc = "Live grep" })
+keymap.set("n", ";b", function() require("snacks").picker.buffers() end, { desc = "Buffers" })
+keymap.set("n", ";;", function() require("snacks").picker.resume() end, { desc = "Resume picker" })
+
+-- Git operations using snacks picker (if available)
+keymap.set("n", "<leader>gc", function() require("snacks").picker.git_commits() end, { desc = "Git commits" })
+keymap.set("n", "<leader>gs", function() require("snacks").picker.git_status() end, { desc = "Git status" })
+
+-- ============================================================================
 -- VIM COACH - Command Reference
 -- ============================================================================
 
@@ -145,14 +160,14 @@ keymap.set("n", "<leader>hh", "<cmd>VimCoach all<cr>", { desc = "Vim Coach - All
 -- ============================================================================
 -- NOTES
 -- ============================================================================
--- Dvorak Physical Key Mappings:
--- sd → oe (window left)
--- su → og (window up)  
--- st → oh (window down)
--- sn → ob (window right)
--- sp → or (split pane)
--- sv → ow (split vertical)
--- ti → hc (tab insert)
+-- QWERTY Key Mappings:
+-- sh → left window
+-- sk → up window  
+-- sj → down window
+-- sl → right window
+-- sp → split horizontal
+-- sv → split vertical
+-- ti → new tab
 --
 -- Vim Coach Keybindings:
 -- <leader>? → Comprehensive command search

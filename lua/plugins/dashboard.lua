@@ -36,16 +36,16 @@ return {
         return quote.emoji .. " " .. quote.text .. " " .. quote.emoji
       end
 
-      -- Dynamic DUKE NUKEM ASCII Art with random Duke quote
+      -- Dynamic DUKE NVIM ASCII Art with random Duke quote
       local function generate_duke_logo()
         return {
           "",
-          "    ██████╗ ██╗   ██╗██╗  ██╗███████╗    ███╗   ██╗██╗   ██╗██╗  ██╗███████╗███╗   ███╗",
-          "    ██╔══██╗██║   ██║██║ ██╔╝██╔════╝    ████╗  ██║██║   ██║██║ ██╔╝██╔════╝████╗ ████║",
-          "    ██║  ██║██║   ██║█████╔╝ █████╗      ██╔██╗ ██║██║   ██║█████╔╝ █████╗  ██╔████╔██║",
-          "    ██║  ██║██║   ██║██╔═██╗ ██╔══╝      ██║╚██╗██║██║   ██║██╔═██╗ ██╔══╝  ██║╚██╔╝██║",
-          "    ██████╔╝╚██████╔╝██║  ██╗███████╗    ██║ ╚████║╚██████╔╝██║  ██╗███████╗██║ ╚═╝ ██║",
-          "    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝",
+          "    ██████╗ ██╗   ██╗██╗  ██╗███████╗    ███╗   ██╗██╗   ██╗██╗███╗   ███╗",
+          "    ██╔══██╗██║   ██║██║ ██╔╝██╔════╝    ████╗  ██║██║   ██║██║████╗ ████║",
+          "    ██║  ██║██║   ██║█████╔╝ █████╗      ██╔██╗ ██║██║   ██║██║██╔████╔██║",
+          "    ██║  ██║██║   ██║██╔═██╗ ██╔══╝      ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
+          "    ██████╔╝╚██████╔╝██║  ██╗███████╗    ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
+          "    ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝    ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
           "",
           "" .. get_random_duke_quote(),
           "",
@@ -103,15 +103,15 @@ return {
 
       -- File operations
       local function find_files()
-        vim.cmd("Telescope find_files")
+        require("snacks").picker.files()
       end
 
       local function recent_files()
-        vim.cmd("Telescope oldfiles")
+        require("snacks").picker.recent()
       end
 
       local function find_text()
-        vim.cmd("Telescope live_grep")
+        require("snacks").picker.grep()
       end
 
       local function open_config()
@@ -160,7 +160,8 @@ return {
                   "tokyonight-moon",
                   "gruvbox",
                   "catppuccin",
-                  "kanagawa"
+                  "kanagawa",
+                  "blood_moon"
                 }
                 local current_theme = load_theme()
                 local current_index = 1

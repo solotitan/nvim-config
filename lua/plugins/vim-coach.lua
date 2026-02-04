@@ -12,6 +12,12 @@ return {
       -- Enable picker for vim-coach
       picker = {
         enabled = true,
+        -- Show hidden files and directories
+        sources = {
+          files = {
+            hidden = true,
+          },
+        },
         win = {
           input = {
             keys = {
@@ -25,7 +31,7 @@ return {
       bigfile = { enabled = true },
       notifier = { enabled = true },
       quickfile = { enabled = true },
-      statuscolumn = { enabled = true },
+      statuscolumn = { enabled = false },
       words = { enabled = true },
     },
   },
